@@ -74,8 +74,8 @@ add_filter( 'autoremove_attachments_allowed', 'autoremove_attachments_custom_rul
 
 Depending on how you use the plugin, the answer can be either yes, or no.
 
-- **If you enable the additional checks** before the automatic removal of your attachments, you can use your media files in multiple locations without the fear of broken links caused by their removal.
+If you keep the plugin running with the additional checks enabled, you have no restrictions on how you can use your attachments. (you can use your media files in multiple locations, without the fear of broken links caused by their removal)
 
-- **If you disable the additional checks**, you need to make sure you don't reuse your media files between posts. If you do and the parent is deleted, you will end up with broken links in all the other locations where the attachment was used.
+If you disable the additional checks, you need to make sure you don't reuse your media files between posts. If you do and the parent is deleted, you will end up with broken links in all the other locations where the removed attachments were used.
 
 Regardless of how you use the plugin, if you need to use an attachment over and over again, upload it from the global Media Library menu. ( Media > Add New ) This way, it won't be attached as a child to a specific post, page, or custom post type and you will be able to use it without restrictions.
