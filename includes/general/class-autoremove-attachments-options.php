@@ -186,7 +186,7 @@ class Autoremove_Attachments_Options {
 
 
 
-		// Sanitize Removing Files > Check for reused attachments before removal.
+		// Sanitize Removing Files > Perform additional checks before removal.
 		if ( isset( $input['additional-checks'] ) ) {
 			if ( in_array( $input['additional-checks'], array( 'enabled', 'disabled' ), true ) ) {
 				$output['additional-checks'] = $input['additional-checks'];
