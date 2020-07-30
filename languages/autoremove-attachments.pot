@@ -1,0 +1,232 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Autoremove Attachments\n"
+"POT-Creation-Date: 2020-07-27 21:46+0300\n"
+"PO-Revision-Date: 2020-07-25 23:02+0300\n"
+"Last-Translator: Eusebiu Oprinoiu\n"
+"Language-Team: Polygon Themes\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: autoremove-attachments.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e;esc_html__;esc_html_e;"
+"_x:1,2c;_ex:1,2c;esc_attr_x:1,2c;esc_html_x:1,2c;_n:1,2;_n_noop:1,2;"
+"_nx:4c,1,2;_nx_noop:3c,1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: includes/third-party\n"
+"X-Poedit-SearchPathExcluded-1: *.min.js\n"
+
+#: includes/class-autoremove-attachments-requirements.php:139
+msgid "WARNING: You server is running outdated software!"
+msgstr ""
+
+#: includes/class-autoremove-attachments-requirements.php:143
+#, php-format
+msgid ""
+"Autoremove Attachments will not run on PHP versions older than %1$s. You are "
+"running on version %2$s which has serious security and performance issues."
+msgstr ""
+
+#: includes/class-autoremove-attachments-requirements.php:147
+#, php-format
+msgid ""
+"Please ask your hosting provider to help you upgrade. We recommend PHP %1$s "
+"or newer."
+msgstr ""
+
+#: includes/class-autoremove-attachments-requirements.php:153
+msgid "Disable Plugin"
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-admin.php:256
+msgid "New behavior for attachments"
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-admin.php:259
+msgid "Autoremove Attachments is now active on your website."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-admin.php:260
+msgid ""
+"All media files attached as child attachments to a post, page, or custom post "
+"type are now removed as well when the parent is deleted."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-admin.php:263
+msgid "Other important considerations"
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-admin.php:266
+msgid ""
+"A soft delete that places your post, page, or custom post type in Trash will "
+"not trigger the removal of its child attachments. The purge happens when you "
+"empty your trash."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-admin.php:267
+msgid ""
+"When you delete a post, page or custom post type, we try to determine if its "
+"child attachments are used anywhere else on your website. If they are, we do "
+"not remove them, to prevent broken links."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-admin.php:268
+msgid ""
+"Please, keep in mind, this is not something fool-proof, especially if you "
+"store media file IDs or URLs in custom fields. That's why we recommend you "
+"avoid reusing your attachments between posts, if possible."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-admin.php:269
+msgid ""
+"If you need to use an attachment over and over again, upload it from the "
+"global Media Library menu ( Media > Add New ). This way, it won't be attached "
+"as a child to a specific post, page, or custom post type."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-admin.php:270
+msgid ""
+"The additional checks before the automatic removal can be disabled from the "
+"Media Settings for improved performance on large websites with thousands of "
+"posts and media files."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-admin.php:271
+msgid ""
+"Disable the additional checks if you experience slow queries and timeouts "
+"when you empty your trash."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-admin.php:272
+msgid ""
+"The plugin only removes files tracked by WordPress. Some poorly coded themes "
+"generate additional thumbnail sizes that are not tracked by WordPress and "
+"this always leads to orphan files left on your server."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-admin.php:273
+msgid ""
+"Though technically not an issue related to Autoremove Attachments, this is "
+"something you should be aware of if you're using a very old theme relying on "
+"third-party scripts (like TimThumb or Aqua Resizer) for generating thumbnails."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-admin.php:277
+msgid "Change Settings"
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-admin.php:281
+msgid "Hide Notice"
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-options.php:45
+msgid "Removing Files"
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-options.php:55
+msgid "Perform additional checks before removal"
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-options.php:77
+msgid ""
+"While Autoremove Attachments is active on your website, all media files "
+"attached as child attachments to a post, page, or custom post type are "
+"removed automatically when the parent is deleted."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-options.php:78
+msgid ""
+"Use the settings below to control how these attachments are removed and to "
+"optimize the cleanup process on large websites with thousands of posts and "
+"media files."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-options.php:110
+msgid "Enabled (for increased security)"
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-options.php:115
+msgid "Disabled (for increased performance)"
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-options.php:120
+msgid ""
+"When this option is Enabled, we will try to determine if the child "
+"attachments marked for automatic removal are reused between posts."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-options.php:121
+msgid ""
+"If we find that your attachments are used in multiple places, we will not "
+"remove them, to prevent broken links."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-options.php:122
+msgid ""
+"Use this option on small and medium websites where performance is not an "
+"issue."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-options.php:124
+msgid ""
+"When this option is Disabled, we will not perform any checks before removing "
+"the child attachments marked for removal."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-options.php:125
+msgid ""
+"If you reuse your attachments and disable the additional checks, you will end "
+"up with broken links."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-options.php:126
+msgid ""
+"Use this option on large websites with thousands of posts and media files. "
+"(if you experience slow queries and timeouts)"
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-options.php:128
+msgid ""
+"Regardless of what option you choose, if you need to use an attachment over "
+"and over again, upload it from the global Media Library menu. ( Media > Add "
+"New )"
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-options.php:129
+msgid ""
+"This way, it won't be attached as a child to a specific post, page, or custom "
+"post type."
+msgstr ""
+
+#: includes/general/class-autoremove-attachments-options.php:139
+msgid "Wrong option ID."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Autoremove Attachments"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/autoremove-attachments"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Autoremove Attachments helps you keep your media library clean by deleting "
+"all media files attached to a post when that post is permanently removed from "
+"your system."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Polygon Themes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://polygonthemes.com"
+msgstr ""
