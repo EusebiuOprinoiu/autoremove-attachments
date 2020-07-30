@@ -19,9 +19,7 @@ Autoremove Attachments tries to solve this problem by automating the removal of 
 - [Easy Digital Downloads](https://wordpress.org/plugins/easy-digital-downloads)
 - All themes and plugins that do things the WordPress way
 
-If you use a plugin to optimize and clean your database of revisions, trashed posts, etc, make sure you use one that relies on native WordPress functions to perform the maintenance tasks. Plugins we recommend:
-
-- [WP-Sweep](https://wordpress.org/plugins/wp-sweep)
+If you use a plugin to optimize and clean your database of revisions, trashed posts, etc, make sure you use one that relies on native WordPress functions to perform the maintenance tasks. We recommend [WP-Sweep](https://wordpress.org/plugins/wp-sweep).
 
 
 ## Frequently Asked Questions
