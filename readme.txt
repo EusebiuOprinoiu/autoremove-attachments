@@ -4,7 +4,7 @@ Contributors:      PolygonThemes, EusebiuOprinoiu
 Tags:              attachment, media, post, page, custom post type
 Stable tag:        trunk
 Requires PHP:      7.2
-Tested up to:      5.4
+Tested up to:      5.5
 Requires at least: 5.0
 License:           GPLv3 or later
 License URI:       https://choosealicense.com/licenses/gpl-3.0
