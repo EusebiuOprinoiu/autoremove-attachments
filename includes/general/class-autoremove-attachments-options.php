@@ -32,7 +32,7 @@ class Autoremove_Attachments_Options {
 
 		// Register settings.
 		register_setting(
-			'autoremove_attachments',             // Options group.
+			'media',                              // Options group.
 			'autoremove_attachments',             // Options name.
 			array( $this, 'sanitize_options' )    // Sanitization function.
 		);
@@ -79,7 +79,7 @@ class Autoremove_Attachments_Options {
 			</p>
 		<?php
 
-		settings_fields( 'autoremove_attachments' );         // Options group.
+		settings_fields( 'media' );                          // Options group.
 		do_settings_sections( 'autoremove_attachments' );    // Options page slug.
 	}
 

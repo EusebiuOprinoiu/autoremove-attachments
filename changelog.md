@@ -1,3 +1,6 @@
+#### Version 1.2.1
+- Fixed a bug that blocked changes to image sizes under Media
+
 #### Version 1.2.0
 - Minor code refactoring
 - Extended support for WooCommerce and Easy Digital Downloads.
