@@ -79,7 +79,6 @@ class Autoremove_Attachments_Options {
 			</p>
 		<?php
 
-		settings_fields( 'media' );                          // Options group.
 		do_settings_sections( 'autoremove_attachments' );    // Options page slug.
 	}
 
