@@ -2,7 +2,7 @@
 - Removed a code snipped that became redundant on the previous update
 
 #### Version 1.2.1
-- Fixed a bug that blocked changes to image sizes under Media
+- Fixed a bug that blocked changes to image sizes under Settings > Media
 
 #### Version 1.2.0
 - Minor code refactoring

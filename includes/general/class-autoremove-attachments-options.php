@@ -79,7 +79,7 @@ class Autoremove_Attachments_Options {
 			</p>
 		<?php
 
-		do_settings_sections( 'autoremove_attachments' );    // Options page slug.
+		do_settings_sections( 'autoremove_attachments' );
 	}
 
 
