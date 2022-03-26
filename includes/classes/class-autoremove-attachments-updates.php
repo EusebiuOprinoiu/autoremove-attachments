@@ -6,6 +6,8 @@
  * @package Autoremove_Attachments
  */
 
+defined( 'ABSPATH' ) || exit;
+
 
 
 
@@ -19,6 +21,20 @@
  * @since 1.0.0
  */
 class Autoremove_Attachments_Updates {
+
+	/**
+	 * Hook into actions and filters.
+	 *
+	 * @since 1.0.0
+	 */
+	public function init() {
+		add_action( 'plugins_loaded', array( $this, 'maybe_run_recursive_updates' ) );
+		add_action( 'wpmu_new_blog', array( $this, 'maybe_run_activation_script' ), 10, 6 );
+	}
+
+
+
+
 
 	/**
 	 * Migrate and update options on plugin updates.
@@ -62,13 +78,13 @@ class Autoremove_Attachments_Updates {
 		if ( version_compare( AUTOREMOVE_ATTACHMENTS_VERSION, $autoremove_attachments['version'] ) > 0 ) {
 			// Migrate options to version 1.0.8.
 			if ( version_compare( $autoremove_attachments['version'], '1.0.8' ) < 0 ) {
-				require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/general/updates/update-to-version-1.0.8.php';
+				require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/classes/updates/update-to-version-1.0.8.php';
 				$autoremove_attachments['db-version'] = '1.0.8';
 			}
 
 			// Migrate options to version 1.2.0.
 			if ( version_compare( $autoremove_attachments['version'], '1.2.0' ) < 0 ) {
-				require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/general/updates/update-to-version-1.2.0.php';
+				require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/classes/updates/update-to-version-1.2.0.php';
 				$autoremove_attachments['db-version'] = '1.2.0';
 			}
 
@@ -102,10 +118,10 @@ class Autoremove_Attachments_Updates {
 	 */
 	public function maybe_run_activation_script( $blog_id, $user_id, $domain, $path, $site_id, $meta ) {
 		if ( $blog_id ) {
-			if ( is_plugin_active_for_network( plugin_basename( AUTOREMOVE_ATTACHMENTS_MAIN_FILE ) ) ) {
+			if ( is_plugin_active_for_network( plugin_basename( AUTOREMOVE_ATTACHMENTS_FILE ) ) ) {
 				switch_to_blog( $blog_id );
 
-				require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/class-autoremove-attachments-activator.php';
+				require_once AUTOREMOVE_ATTACHMENTS_DIR . 'includes/class-autoremove-attachments-activator.php';
 				Autoremove_Attachments_Activator::run_activation_script();
 
 				restore_current_blog();

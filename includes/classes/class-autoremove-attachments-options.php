@@ -6,6 +6,8 @@
  * @package Autoremove_Attachments
  */
 
+defined( 'ABSPATH' ) || exit;
+
 
 
 
@@ -18,6 +20,19 @@
  * @since 1.2.0
  */
 class Autoremove_Attachments_Options {
+
+	/**
+	 * Hook into actions and filters.
+	 *
+	 * @since 1.0.0
+	 */
+	public function init() {
+		add_action( 'admin_init', array( $this, 'extend_media_options' ) );
+	}
+
+
+
+
 
 	/**
 	 * Create options under Settings > Media.

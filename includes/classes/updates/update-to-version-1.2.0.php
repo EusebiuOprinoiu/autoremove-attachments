@@ -6,6 +6,8 @@
  * @package Autoremove_Attachments
  */
 
+defined( 'ABSPATH' ) || exit;
+
 
 
 

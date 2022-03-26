@@ -6,6 +6,8 @@
  * @package Autoremove_Attachments
  */
 
+defined( 'ABSPATH' ) || exit;
+
 
 
 
@@ -21,36 +23,11 @@
 class Autoremove_Attachments_Requirements {
 
 	/**
-	 * Minimum required version of PHP.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    string
-	 */
-	protected $minimum_php_version;
-
-	/**
-	 * Minimum recommended version of PHP.
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    string
-	 */
-	protected $recommended_php_version;
-
-
-
-
-
-	/**
-	 * Get things started.
+	 * Hook into actions and filters.
 	 *
 	 * @since 1.0.0
 	 */
-	public function __construct() {
-		$this->minimum_php_version     = '7.2';
-		$this->recommended_php_version = '7.4';
-
+	public function init() {
 		if ( ! $this->check_php() ) {
 			add_action( 'network_admin_notices', array( $this, 'php_requirements_not_met' ) );
 			add_action( 'admin_notices', array( $this, 'php_requirements_not_met' ) );
@@ -61,38 +38,38 @@ class Autoremove_Attachments_Requirements {
 
 
 
-		/**
-		 * Check all plugin requirements.
-		 *
-		 * Check if all the requirements are met. If the function returns true,
-		 * the plugin can run without problems.
-		 *
-		 * @since  1.0.0
-		 * @return bool
-		 */
-		public function check() {
-			if ( $this->check_php() ) {
-				return true;
-			} else {
-				return false;
-			}
+	/**
+	 * Check all plugin requirements.
+	 *
+	 * Check if all the requirements are met. If the function returns true,
+	 * the plugin can run without problems.
+	 *
+	 * @since  1.0.0
+	 * @return bool
+	 */
+	public function check() {
+		if ( $this->check_php() ) {
+			return true;
+		} else {
+			return false;
 		}
+	}
 
 
 
 
 
-		/**
-		 * Check PHP requirements.
-		 *
-		 * Check if the server runs on a supported version of PHP.
-		 *
-		 * @since  1.0.0
-		 * @return bool
-		 */
-		public function check_php() {
-			return version_compare( PHP_VERSION, $this->minimum_php_version ) >= 0;
-		}
+	/**
+	 * Check PHP requirements.
+	 *
+	 * Check if the server runs on a supported version of PHP.
+	 *
+	 * @since  1.0.0
+	 * @return bool
+	 */
+	public function check_php() {
+		return version_compare( PHP_VERSION, AUTOREMOVE_ATTACHMENTS_MIN_PHP_VERSION ) >= 0;
+	}
 
 
 
@@ -114,7 +91,7 @@ class Autoremove_Attachments_Requirements {
 
 			if ( $nonce && wp_verify_nonce( $nonce, 'disable-autoremove-attachments' ) ) {
 				if ( isset( $_GET['disable_autoremove_attachments'] ) && ( $_GET['disable_autoremove_attachments'] === 'true' ) ) {
-					deactivate_plugins( plugin_basename( AUTOREMOVE_ATTACHMENTS_MAIN_FILE ) );
+					deactivate_plugins( plugin_basename( AUTOREMOVE_ATTACHMENTS_FILE ) );
 
 					return; // Do not display the notice on page reload.
 				}
@@ -126,7 +103,7 @@ class Autoremove_Attachments_Requirements {
 			if (
 				! is_multisite() ||
 				( is_multisite() && is_super_admin() ) ||
-				( is_multisite() && ! is_super_admin() && ! is_plugin_active_for_network( plugin_basename( AUTOREMOVE_ATTACHMENTS_MAIN_FILE ) ) ) ) {
+				( is_multisite() && ! is_super_admin() && ! is_plugin_active_for_network( plugin_basename( AUTOREMOVE_ATTACHMENTS_FILE ) ) ) ) {
 					$disable_button = true;
 			} else {
 				$disable_button = false;
@@ -140,11 +117,11 @@ class Autoremove_Attachments_Requirements {
 					</p>
 					<p>
 						<?php // phpcs:ignore
-							printf( esc_html__( 'Autoremove Attachments will not run on PHP versions older than %1$s. You are running on version %2$s which has serious security and performance issues.', 'autoremove-attachments' ), $this->minimum_php_version, PHP_VERSION );
+							printf( esc_html__( '%1$s doesn\'t run on PHP versions older than %2$s. You are running on version %3$s which has serious security and performance issues.', 'autoremove-attachments' ), AUTOREMOVE_ATTACHMENTS_NAME, AUTOREMOVE_ATTACHMENTS_MIN_PHP_VERSION, PHP_VERSION );
 						?>
 						<br>
 						<?php // phpcs:ignore
-							printf( esc_html__( 'Please ask your hosting provider to help you upgrade. We recommend PHP %1$s or newer.', 'autoremove-attachments' ), $this->recommended_php_version );
+							printf( esc_html__( 'Please ask your hosting provider to help you upgrade. We recommend PHP %1$s or newer.', 'autoremove-attachments' ), AUTOREMOVE_ATTACHMENTS_REC_PHP_VERSION );
 						?>
 					</p>
 					<?php if ( $disable_button ) { ?>

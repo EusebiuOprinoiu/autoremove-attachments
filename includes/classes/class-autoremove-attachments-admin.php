@@ -6,6 +6,8 @@
  * @package Autoremove_Attachments
  */
 
+defined( 'ABSPATH' ) || exit;
+
 
 
 
@@ -19,6 +21,21 @@
  * @since 1.0.0
  */
 class Autoremove_Attachments_Admin {
+
+	/**
+	 * Hook into actions and filters.
+	 *
+	 * @since 1.0.0
+	 */
+	public function init() {
+		add_action( 'network_admin_notices', array( $this, 'onboarding_notice' ) );
+		add_action( 'admin_notices', array( $this, 'onboarding_notice' ) );
+		add_action( 'before_delete_post', array( $this, 'remove_attachments' ) );
+	}
+
+
+
+
 
 	/**
 	 * Remove attachments.

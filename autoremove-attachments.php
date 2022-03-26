@@ -5,7 +5,7 @@
  * Author:            Polygon Themes
  * Author URI:        https://polygonthemes.com
  * Description:       Autoremove Attachments helps you keep your media library clean by deleting all media files attached to a post when that post is permanently removed from your system.
- * Version:           1.2.1
+ * Version:           1.3.0
  * Requires PHP:      7.2
  * Requires at least: 5.0
  *
@@ -27,38 +27,29 @@
  * @package Autoremove_Attachments
  */
 
-
-
-
-
-/**
- * Abort if this file is called directly.
- */
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
+defined( 'ABSPATH' ) || exit;
 
 
 
 
 
-/**
- * Define plugin constants.
- */
-define( 'AUTOREMOVE_ATTACHMENTS_VERSION', '1.2.1' );                         // Current plugin version.
-define( 'AUTOREMOVE_ATTACHMENTS_NAME', 'autoremove-attachments' );           // Unique plugin identifier.
+define( 'AUTOREMOVE_ATTACHMENTS_VERSION', '1.3.0' );
+define( 'AUTOREMOVE_ATTACHMENTS_NAME', 'Autoremove Attachments' );
+define( 'AUTOREMOVE_ATTACHMENTS_SLUG', 'autoremove-attachments' );
 
-define( 'AUTOREMOVE_ATTACHMENTS_MAIN_FILE', __FILE__ );                      // Path to main plugin file.
-define( 'AUTOREMOVE_ATTACHMENTS_DIR_PATH', plugin_dir_path( __FILE__ ) );    // Path to plugin directory.
-define( 'AUTOREMOVE_ATTACHMENTS_DIR_URL', plugin_dir_url( __FILE__ ) );      // URL to plugin directory.
+define( 'AUTOREMOVE_ATTACHMENTS_FILE', __FILE__ );
+define( 'AUTOREMOVE_ATTACHMENTS_URL', plugin_dir_url( __FILE__ ) );
+define( 'AUTOREMOVE_ATTACHMENTS_DIR', plugin_dir_path( __FILE__ ) );
+define( 'AUTOREMOVE_ATTACHMENTS_BASE', plugin_basename( __FILE__ ) );
+
+define( 'AUTOREMOVE_ATTACHMENTS_MIN_PHP_VERSION', '7.2' );
+define( 'AUTOREMOVE_ATTACHMENTS_REC_PHP_VERSION', '8.0' );
 
 
 
 
 
 /**
- * Activate Autoremove Attachments.
- *
  * Code that runs during the plugin activation.
  *
  * @since 1.0.0
@@ -68,15 +59,13 @@ function activate_autoremove_attachments( $network_wide ) {
 	require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/class-autoremove-attachments-activator.php';
 	Autoremove_Attachments_Activator::activate( $network_wide );
 }
-register_activation_hook( AUTOREMOVE_ATTACHMENTS_MAIN_FILE, 'activate_autoremove_attachments' );
+register_activation_hook( AUTOREMOVE_ATTACHMENTS_FILE, 'activate_autoremove_attachments' );
 
 
 
 
 
 /**
- * Deactivate Autoremove Attachments.
- *
  * Code that runs during the plugin deactivation.
  *
  * @since 1.0.0
@@ -86,25 +75,29 @@ function deactivate_autoremove_attachments( $network_wide ) {
 	require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/class-autoremove-attachments-deactivator.php';
 	Autoremove_Attachments_Deactivator::deactivate( $network_wide );
 }
-register_deactivation_hook( AUTOREMOVE_ATTACHMENTS_MAIN_FILE, 'deactivate_autoremove_attachments' );
+register_deactivation_hook( AUTOREMOVE_ATTACHMENTS_FILE, 'deactivate_autoremove_attachments' );
 
 
 
 
 
 /**
- * Run Autoremove Attachments.
- *
- * Load and execute the code of our plugin if all requirements are met.
+ * Load and execute if all requirements are met.
  *
  * @since 1.0.0
  */
 function run_autoremove_attachments() {
-	require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/class-autoremove-attachments-requirements.php';
+	require_once AUTOREMOVE_ATTACHMENTS_DIR . 'includes/class-autoremove-attachments.php';
+	require_once AUTOREMOVE_ATTACHMENTS_DIR . 'includes/class-autoremove-attachments-textdomain.php';
+	require_once AUTOREMOVE_ATTACHMENTS_DIR . 'includes/class-autoremove-attachments-requirements.php';
+
+	$textdomain = new Autoremove_Attachments_Textdomain();
+	$textdomain->init();
+
 	$requirements = new Autoremove_Attachments_Requirements();
+	$requirements->init();
 
 	if ( $requirements->check() ) {
-		require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/class-autoremove-attachments.php';
 		$plugin = new Autoremove_Attachments();
 		$plugin->run();
 	}

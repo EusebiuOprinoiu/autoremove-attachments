@@ -6,6 +6,8 @@
  * @package Autoremove_Attachments
  */
 
+defined( 'ABSPATH' ) || exit;
+
 
 
 
@@ -21,26 +23,27 @@
 class Autoremove_Attachments_Textdomain {
 
 	/**
-	 * Load plugin text-domain.
-	 *
-	 * Load the plugin text-domain and define the location of our translation files.
-	 * See examples below:
-	 *
-	 * - Global /languages/ folder: wp-content/languages/plugins/autoremove-attachments-en_US.mo
-	 * - Local /languages/ folder: wp-content/plugins/autoremove-attachments/languages/autoremove-attachments-en_US.mo
-	 *
-	 * If no files are found in the global languages folder the plugin uses the files available in the
-	 * local folder.
+	 * Hook into actions and filters.
 	 *
 	 * @since 1.0.0
 	 */
-	public function load_plugin_textdomain() {
-		$locale = apply_filters( 'locale', get_locale(), AUTOREMOVE_ATTACHMENTS_NAME );
+	public function init() {
+		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
+	}
 
-		// Load translation files from the global /languages/ folder.
-		load_textdomain( AUTOREMOVE_ATTACHMENTS_NAME, trailingslashit( WP_LANG_DIR ) . 'plugins/' . AUTOREMOVE_ATTACHMENTS_NAME . '-' . $locale . '.mo' );
 
-		// Load translation files from the local /languages/ folder.
-		load_plugin_textdomain( AUTOREMOVE_ATTACHMENTS_NAME, false, plugin_basename( AUTOREMOVE_ATTACHMENTS_DIR_PATH ) . '/languages/' );
+
+
+
+	/**
+	 * Load the plugin textdomain.
+	 *
+	 * The plugin tries to load the files from the global /languages/ folder first.
+	 * If it can't find any, it will load the files from the local /languages/ folder.
+	 *
+	 * @since 1.0.0
+	 */
+	public function load_textdomain() {
+		load_plugin_textdomain( 'autoremove-attachments', false, plugin_basename( AUTOREMOVE_ATTACHMENTS_DIR ) . '/languages/' );
 	}
 }

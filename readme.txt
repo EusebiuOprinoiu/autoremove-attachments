@@ -117,6 +117,10 @@ Regardless of how you use the plugin, if you need to use an attachment over and 
 
 ## Changelog
 
+#### Version 1.3.0
+- Minor code refactoring
+- Language files updated
+
 #### Version 1.2.1
 - Fixed a bug that blocked changes to image sizes under Settings > Media
 
