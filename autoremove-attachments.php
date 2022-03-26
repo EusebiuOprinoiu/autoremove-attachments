@@ -56,7 +56,7 @@ define( 'AUTOREMOVE_ATTACHMENTS_REC_PHP_VERSION', '8.0' );
  * @param bool $network_wide Boolean value with the network-wide activation status.
  */
 function activate_autoremove_attachments( $network_wide ) {
-	require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/class-autoremove-attachments-activator.php';
+	require_once AUTOREMOVE_ATTACHMENTS_DIR . 'includes/class-autoremove-attachments-activator.php';
 	Autoremove_Attachments_Activator::activate( $network_wide );
 }
 register_activation_hook( AUTOREMOVE_ATTACHMENTS_FILE, 'activate_autoremove_attachments' );
@@ -72,7 +72,7 @@ register_activation_hook( AUTOREMOVE_ATTACHMENTS_FILE, 'activate_autoremove_atta
  * @param bool $network_wide Boolean value with the network-wide activation status.
  */
 function deactivate_autoremove_attachments( $network_wide ) {
-	require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/class-autoremove-attachments-deactivator.php';
+	require_once AUTOREMOVE_ATTACHMENTS_DIR . 'includes/class-autoremove-attachments-deactivator.php';
 	Autoremove_Attachments_Deactivator::deactivate( $network_wide );
 }
 register_deactivation_hook( AUTOREMOVE_ATTACHMENTS_FILE, 'deactivate_autoremove_attachments' );
