@@ -33,9 +33,6 @@ defined( 'ABSPATH' ) || exit;
 
 
 
-/**
- * Define plugin constants.
- */
 define( 'AUTOREMOVE_ATTACHMENTS_VERSION', '1.3.0' );
 define( 'AUTOREMOVE_ATTACHMENTS_SLUG', 'autoremove-attachments' );
 
