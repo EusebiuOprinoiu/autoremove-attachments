@@ -44,6 +44,6 @@ class Autoremove_Attachments_Textdomain {
 	 * @since 1.0.0
 	 */
 	public function load_textdomain() {
-		load_plugin_textdomain( 'autoremove-attachments', false, plugin_basename( AUTOREMOVE_ATTACHMENTS_DIR ) . '/languages/' );
+		load_plugin_textdomain( 'autoremove-attachments', false, plugin_basename( AUTOREMOVE_ATTACHMENTS_DIR_PATH ) . '/languages/' );
 	}
 }

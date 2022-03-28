@@ -117,7 +117,7 @@ class Autoremove_Attachments_Requirements {
 					</p>
 					<p>
 						<?php // phpcs:ignore
-							printf( esc_html__( '%1$s doesn\'t run on PHP versions older than %2$s. You are running on version %3$s which has serious security and performance issues.', 'autoremove-attachments' ), AUTOREMOVE_ATTACHMENTS_NAME, AUTOREMOVE_ATTACHMENTS_MIN_PHP_VERSION, PHP_VERSION );
+							printf( esc_html__( 'Autoremove Attachments doesn\'t run on PHP versions older than %1$s. You are running on version %2$s which has serious security and performance issues.', 'autoremove-attachments' ), AUTOREMOVE_ATTACHMENTS_MIN_PHP_VERSION, PHP_VERSION );
 						?>
 						<br>
 						<?php // phpcs:ignore

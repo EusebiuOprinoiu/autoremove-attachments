@@ -33,17 +33,18 @@ defined( 'ABSPATH' ) || exit;
 
 
 
-define( 'AUTOREMOVE_ATTACHMENTS_VERSION', '1.3.0' );
-define( 'AUTOREMOVE_ATTACHMENTS_NAME', 'Autoremove Attachments' );
-define( 'AUTOREMOVE_ATTACHMENTS_SLUG', 'autoremove-attachments' );
+/**
+ * Define plugin constants.
+ */
+define( 'AUTOREMOVE_ATTACHMENTS_VERSION', '1.3.0' );                         // Current plugin version.
+define( 'AUTOREMOVE_ATTACHMENTS_SLUG', 'autoremove-attachments' );           // Unique plugin identifier.
 
-define( 'AUTOREMOVE_ATTACHMENTS_FILE', __FILE__ );
-define( 'AUTOREMOVE_ATTACHMENTS_URL', plugin_dir_url( __FILE__ ) );
-define( 'AUTOREMOVE_ATTACHMENTS_DIR', plugin_dir_path( __FILE__ ) );
-define( 'AUTOREMOVE_ATTACHMENTS_BASE', plugin_basename( __FILE__ ) );
+define( 'AUTOREMOVE_ATTACHMENTS_FILE', __FILE__ );                           // Path to main plugin file.
+define( 'AUTOREMOVE_ATTACHMENTS_DIR_URL', plugin_dir_url( __FILE__ ) );      // URL to plugin directory.
+define( 'AUTOREMOVE_ATTACHMENTS_DIR_PATH', plugin_dir_path( __FILE__ ) );    // Path to plugin directory.
 
-define( 'AUTOREMOVE_ATTACHMENTS_MIN_PHP_VERSION', '7.2' );
-define( 'AUTOREMOVE_ATTACHMENTS_REC_PHP_VERSION', '8.0' );
+define( 'AUTOREMOVE_ATTACHMENTS_MIN_PHP_VERSION', '7.2' );                   // Minimum PHP version.
+define( 'AUTOREMOVE_ATTACHMENTS_REC_PHP_VERSION', '8.0' );                   // Recommended PHP version.
 
 
 
@@ -56,7 +57,7 @@ define( 'AUTOREMOVE_ATTACHMENTS_REC_PHP_VERSION', '8.0' );
  * @param bool $network_wide Boolean value with the network-wide activation status.
  */
 function activate_autoremove_attachments( $network_wide ) {
-	require_once AUTOREMOVE_ATTACHMENTS_DIR . 'includes/class-autoremove-attachments-activator.php';
+	require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/class-autoremove-attachments-activator.php';
 	Autoremove_Attachments_Activator::activate( $network_wide );
 }
 register_activation_hook( AUTOREMOVE_ATTACHMENTS_FILE, 'activate_autoremove_attachments' );
@@ -72,7 +73,7 @@ register_activation_hook( AUTOREMOVE_ATTACHMENTS_FILE, 'activate_autoremove_atta
  * @param bool $network_wide Boolean value with the network-wide activation status.
  */
 function deactivate_autoremove_attachments( $network_wide ) {
-	require_once AUTOREMOVE_ATTACHMENTS_DIR . 'includes/class-autoremove-attachments-deactivator.php';
+	require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/class-autoremove-attachments-deactivator.php';
 	Autoremove_Attachments_Deactivator::deactivate( $network_wide );
 }
 register_deactivation_hook( AUTOREMOVE_ATTACHMENTS_FILE, 'deactivate_autoremove_attachments' );
@@ -87,9 +88,9 @@ register_deactivation_hook( AUTOREMOVE_ATTACHMENTS_FILE, 'deactivate_autoremove_
  * @since 1.0.0
  */
 function run_autoremove_attachments() {
-	require_once AUTOREMOVE_ATTACHMENTS_DIR . 'includes/class-autoremove-attachments.php';
-	require_once AUTOREMOVE_ATTACHMENTS_DIR . 'includes/class-autoremove-attachments-textdomain.php';
-	require_once AUTOREMOVE_ATTACHMENTS_DIR . 'includes/class-autoremove-attachments-requirements.php';
+	require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/class-autoremove-attachments.php';
+	require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/class-autoremove-attachments-textdomain.php';
+	require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/class-autoremove-attachments-requirements.php';
 
 	$textdomain = new Autoremove_Attachments_Textdomain();
 	$textdomain->init();

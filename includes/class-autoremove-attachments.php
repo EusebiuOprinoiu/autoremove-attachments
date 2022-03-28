@@ -45,9 +45,9 @@ class Autoremove_Attachments {
 	 * @access private
 	 */
 	private function includes() {
-		require_once AUTOREMOVE_ATTACHMENTS_DIR . 'includes/classes/class-autoremove-attachments-admin.php';
-		require_once AUTOREMOVE_ATTACHMENTS_DIR . 'includes/classes/class-autoremove-attachments-options.php';
-		require_once AUTOREMOVE_ATTACHMENTS_DIR . 'includes/classes/class-autoremove-attachments-updates.php';
+		require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/classes/class-autoremove-attachments-admin.php';
+		require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/classes/class-autoremove-attachments-options.php';
+		require_once AUTOREMOVE_ATTACHMENTS_DIR_PATH . 'includes/classes/class-autoremove-attachments-updates.php';
 	}
 
 
