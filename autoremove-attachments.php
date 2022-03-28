@@ -36,15 +36,15 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Define plugin constants.
  */
-define( 'AUTOREMOVE_ATTACHMENTS_VERSION', '1.3.0' );                         // Current plugin version.
-define( 'AUTOREMOVE_ATTACHMENTS_SLUG', 'autoremove-attachments' );           // Unique plugin identifier.
+define( 'AUTOREMOVE_ATTACHMENTS_VERSION', '1.3.0' );
+define( 'AUTOREMOVE_ATTACHMENTS_SLUG', 'autoremove-attachments' );
 
-define( 'AUTOREMOVE_ATTACHMENTS_FILE', __FILE__ );                           // Path to main plugin file.
-define( 'AUTOREMOVE_ATTACHMENTS_DIR_URL', plugin_dir_url( __FILE__ ) );      // URL to plugin directory.
-define( 'AUTOREMOVE_ATTACHMENTS_DIR_PATH', plugin_dir_path( __FILE__ ) );    // Path to plugin directory.
+define( 'AUTOREMOVE_ATTACHMENTS_FILE', __FILE__ );
+define( 'AUTOREMOVE_ATTACHMENTS_DIR_URL', plugin_dir_url( __FILE__ ) );
+define( 'AUTOREMOVE_ATTACHMENTS_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
-define( 'AUTOREMOVE_ATTACHMENTS_MIN_PHP_VERSION', '7.2' );                   // Minimum PHP version.
-define( 'AUTOREMOVE_ATTACHMENTS_REC_PHP_VERSION', '8.0' );                   // Recommended PHP version.
+define( 'AUTOREMOVE_ATTACHMENTS_MIN_PHP_VERSION', '7.2' );
+define( 'AUTOREMOVE_ATTACHMENTS_REC_PHP_VERSION', '8.0' );
 
 
 
