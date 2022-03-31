@@ -100,4 +100,4 @@ function run_autoremove_attachments() {
 		$plugin->run();
 	}
 }
-run_autoremove_attachments();
+add_action( 'plugins_loaded', 'run_autoremove_attachments' );
