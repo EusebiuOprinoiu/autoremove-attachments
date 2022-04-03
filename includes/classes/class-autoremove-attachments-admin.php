@@ -294,7 +294,7 @@ class Autoremove_Attachments_Admin {
 								<b><?php echo esc_html__( 'Change Settings', 'autoremove-attachments' ); ?></b>
 							</a>
 							|
-							<a href="?autoremove_attachments_hide_notice=true">
+							<a href="<?php echo esc_url( add_query_arg( 'autoremove_attachments_hide_notice', 'true' ) ); ?>">
 								<b><?php echo esc_html__( 'Hide Notice', 'autoremove-attachments' ); ?></b>
 							</a>
 						</p>

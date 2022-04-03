@@ -5,7 +5,7 @@
  * Author:            Polygon Themes
  * Author URI:        https://polygonthemes.com
  * Description:       Autoremove Attachments helps you keep your media library clean by deleting all media files attached to a post when that post is permanently removed from your system.
- * Version:           1.3.0
+ * Version:           1.3.1
  * Requires PHP:      7.2
  * Requires at least: 5.0
  *
@@ -33,7 +33,7 @@ defined( 'ABSPATH' ) || exit;
 
 
 
-define( 'AUTOREMOVE_ATTACHMENTS_VERSION', '1.3.0' );
+define( 'AUTOREMOVE_ATTACHMENTS_VERSION', '1.3.1' );
 define( 'AUTOREMOVE_ATTACHMENTS_SLUG', 'autoremove-attachments' );
 
 define( 'AUTOREMOVE_ATTACHMENTS_FILE', __FILE__ );

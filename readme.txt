@@ -117,6 +117,9 @@ Regardless of how you use the plugin, if you need to use an attachment over and 
 
 ## Changelog
 
+#### Version 1.3.1
+- Minor improvements to admin notices
+
 #### Version 1.3.0
 - Minor code refactoring
 - Language files updated

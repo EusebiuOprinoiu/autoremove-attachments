@@ -126,7 +126,7 @@ class Autoremove_Attachments_Requirements {
 					</p>
 					<?php if ( $disable_button ) { ?>
 						<p>
-							<a href="<?php echo esc_url( wp_nonce_url( '?disable_autoremove_attachments=true', 'disable-autoremove-attachments' ) ); ?>">
+							<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'disable_autoremove_attachments', 'true' ), 'disable-autoremove-attachments' ) ); ?>">
 								<b><?php echo esc_html__( 'Disable Plugin', 'autoremove-attachments' ); ?></b>
 							</a>
 						</p>
