@@ -7,7 +7,7 @@
  * Description:       Autoremove Attachments helps you keep your media library clean by deleting all media files attached to a post when that post is permanently removed from your system.
  * Version:           1.3.1
  * Requires PHP:      7.2
- * Requires at least: 5.0
+ * Requires at least: 5.6
  *
  * Text Domain:       autoremove-attachments
  * Domain Path:       /languages/
