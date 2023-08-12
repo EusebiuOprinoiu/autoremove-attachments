@@ -117,6 +117,10 @@ Regardless of how you use the plugin, if you need to use an attachment over and 
 
 ## Changelog
 
+#### Unreleased
+- Minimum required version of PHP set to 7.4
+- Minimum required version of WP set to 5.8
+
 #### Version 1.3.1
 - Minor improvements to admin notices
 
