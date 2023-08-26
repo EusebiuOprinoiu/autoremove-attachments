@@ -2,9 +2,14 @@ name: Deploy to WordPress
 on:
   release:
     types: [published]
+env:
+  svn-username: ${{ secrets.SVN_USERNAME }}
+  svn-password: ${{ secrets.SVN_PASSWORD }}
+  plugin-slug: autoremove-attachments
+  assets-dir: .wordpress
 jobs:
-  tag:
-    name: New release
+  deploy-plugin:
+    name: Deploy to WordPress
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -12,7 +17,7 @@ jobs:
     - name: WordPress Plugin Deploy
       uses: 10up/action-wordpress-plugin-deploy@stable
       env:
-        SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
-        SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
-        ASSETS_DIR: .wordpress
-        SLUG: autoremove-attachments
+        SVN_USERNAME: ${{ env.svn-username }}
+        SVN_PASSWORD: ${{ env.svn-password }}
+        ASSETS_DIR: ${{ env.assets-dir }}
+        SLUG: ${{ env.plugin-slug }}
