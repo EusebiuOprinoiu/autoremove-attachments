@@ -3,7 +3,7 @@ on:
   release:
     types: [published]
 jobs:
-  deploy-to-wordpress:
+  deploy-plugin:
     name: Deploy to WordPress
     runs-on: ubuntu-latest
     steps:
