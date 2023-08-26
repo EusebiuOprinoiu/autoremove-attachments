@@ -4,7 +4,7 @@ on:
     types: [published]
 jobs:
   tag:
-    name: New release
+    name: Deploy to WordPress
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
