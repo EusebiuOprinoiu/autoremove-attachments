@@ -4,7 +4,7 @@ Contributors:      PolygonThemes, EusebiuOprinoiu
 Tags:              attachment, media, post, page, custom post type
 Stable tag:        trunk
 Requires PHP:      7.4
-Tested up to:      6.3
+Tested up to:      6.9
 Requires at least: 5.8
 License:           GPLv3 or later
 License URI:       https://choosealicense.com/licenses/gpl-3.0
@@ -116,10 +116,6 @@ If you disable the additional checks, you need to make sure you don't reuse your
 Regardless of how you use the plugin, if you need to use an attachment over and over again, upload it from the global Media Library menu. ( Media > Add New ) This way, it won't be attached as a child to a specific post, page, or custom post type and you will be able to use it without restrictions.
 
 ## Changelog
-
-#### Unreleased
-- Minimum required version of PHP set to 7.4
-- Minimum required version of WP set to 5.8
 
 #### Version 1.3.1
 - Minor improvements to admin notices
